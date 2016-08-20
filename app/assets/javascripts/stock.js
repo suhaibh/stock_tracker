@@ -4,6 +4,7 @@
 
 var init_stock_lookup = function(){
 	$('#stock-lookup-form').on('ajax:success', function(event, data, status){
+		// This will add the searched stock's information to the page
 		$('#stock-lookup').replaceWith(data);
 		init_stock_lookup();
 	});
