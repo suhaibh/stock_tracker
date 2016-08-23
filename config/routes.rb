@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  get 'search_stocks', to: "stock#search"
-
-  get 'my_portfolio', to: 'user#my_portfolio'
-
-  devise_for :users
   
+  devise_for :users
   resources :user_stocks, except: [:show, :edit, :update]
+
+  root 'welcome#index'
+  get 'my_portfolio', to: 'user#my_portfolio'
+  get 'search_stocks', to: "stock#search"
+  
+  
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
