@@ -7,7 +7,7 @@ var init_stock_lookup = function(){
 		showSpinner();
 	});
 	
-	$('#stock-lookup-form').on('ajax:after', function(event, data, status){
+	$('#stock-lookup-form').on('ajax:after', function(){
 		hideSpinner();
 	});
 
