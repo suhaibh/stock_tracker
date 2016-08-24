@@ -31,7 +31,7 @@
 						10 stocks.
 					<% end %>
 					<% if current_user.stock_already_added?(@stock.ticker) %>
-						<%= "#{@stock.ticker}." %>
+						stock (<%= "#{@stock.ticker}." %>)
 					<% end %>
 				</span>
 
