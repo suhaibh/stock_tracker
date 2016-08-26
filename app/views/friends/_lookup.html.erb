@@ -1,3 +1,4 @@
+<div id="friend-lookup">
 <h2>Search Users</h2>
 <%= form_tag search_friends_path, remote: true, method: :get, id: 'friend-lookup-form' do %>
 	<div class="form-group row text-center col-md-12">
@@ -18,7 +19,7 @@
 <%= render 'shared/spinner' %>
 
 <% if @users %>
-	<% if @users.size.any? %>
+	<% if @users.size > 0 %>
 		<div id="friend-lookup-results" class="well results-block col-md-10">
 			<table class="search-results-table col-md-12">
 				<tbody>
@@ -47,3 +48,4 @@
 	<% end %>
 <% end %>
 <div id="friend-lookup-errors"></div>
+</div>
