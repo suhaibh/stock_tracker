@@ -2,11 +2,7 @@
 
 <h4>Stocks</h4>
 <% if @user.stocks.any? %>
-	<% @user.stocks.each do |stock| %>
-		<strong>Name:</strong> <%= stock.name %>
-		<strong>Ticker:</strong> <%= stock.ticker %>
-		<strong>Price:</strong> <%= stock.price %>
-	<% end %>
+	<%= render "stock/list" %>
 <% else %>
 <p> <%= "#{@user.full_name} hasn't followed any stocks yet." %> </p>
 <% end %>
@@ -19,3 +15,5 @@
 <% else %>
 	<p> <%= "#{@user.full_name} hasn't added any friends yet." %> </p>
 <% end %>
+
+<%= link_to "Back", my_friends_path, class: "btn btn-primary" %>

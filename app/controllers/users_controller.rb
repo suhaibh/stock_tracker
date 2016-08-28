@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
   	@friends = @user.friends
+  	@user_stocks = @user.user_stocks
   end
 
 end
