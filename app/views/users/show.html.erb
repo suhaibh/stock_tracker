@@ -1,0 +1,21 @@
+<h2 class="page-header"><%= @user.full_name %></h5>
+
+<h4>Stocks</h4>
+<% if @user.stocks.any? %>
+	<% @user.stocks.each do |stock| %>
+		<strong>Name:</strong> <%= stock.name %>
+		<strong>Ticker:</strong> <%= stock.ticker %>
+		<strong>Price:</strong> <%= stock.price %>
+	<% end %>
+<% else %>
+<p> <%= "#{@user.full_name} hasn't followed any stocks yet." %> </p>
+<% end %>
+
+<h4>Friends</h4>
+<% if @friends.any? %>
+	<% @friends.each do |friend| %>
+		<p><%= link_to friend.full_name, user_path(friend) %></p>
+	<% end %>
+<% else %>
+	<p> <%= "#{@user.full_name} hasn't added any friends yet." %> </p>
+<% end %>

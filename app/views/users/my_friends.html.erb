@@ -1,5 +1,5 @@
 <%= render 'friends/lookup' %>
-<% if @friendships.any? %>
+<% if @friends.any? %>
 	<table class="table table-striped">
 	<thead>
 		<tr>
@@ -14,12 +14,12 @@
 			</tr>
 	</thead>
 	<tbody>
-		<% @friendships.each do |friendship| %>
+		<% @friends.each do |friend| %>
 		<tr>
-			<td><%= friendship.friend.full_name %></td>
-			<td><%= friendship.friend.email %></td>
-			<td><%= link_to "View Profile", user_path(friendship.friend), class: 'btn btn-xs btn-primary' %>
-				<%= link_to "Remove Friend", friendship_path(friendship), method: :delete, 
+			<td><%= friend.full_name %></td>
+			<td><%= friend.email %></td>
+			<td><%= link_to "View Profile", user_path(friend), class: 'btn btn-xs btn-primary' %>
+				<%= link_to "Remove Friend", friendship_path(friend.id), method: :delete, 
 																		class: 'btn btn-xs btn-danger' %></td>
 		</tr>
 		<% end %>

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def my_friends
-  	@friendships = current_user.friendships
+  	@friends = current_user.friends
   end
 
   def add_friend
@@ -32,5 +32,8 @@ class UsersController < ApplicationController
   end
 
   def show
+  	@user = User.find(params[:id])
+  	@friends = @user.friends
   end
+
 end
